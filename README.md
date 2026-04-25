@@ -27,7 +27,12 @@ I find a statistically significant positive relationship between tariff exposure
 └── LaTeX_Tables/              # Regression tables (.tex) used in the paper
 ```
 
-**Note: the datasets themselves are not committed to this repository.** The full pipeline depends on Zillow ZHVI, FHFA HPI, BLS QCEW employment files (~4,400 county CSVs per year for 2017–2019), TIGER/Line shapefiles, BEA county GDP, U.S. Census population estimates, and the county-level tariff tracker. Several of these files exceed GitHub's 100 MB per-file limit, and others (Zillow ZHVI in particular) are subject to provider terms of use that discourage redistribution. Re-download them from the sources listed below; once placed in a local `Data/` folder, the notebooks in `src/` reproduce the analysis end-to-end.
+**Note: the datasets themselves are not committed to this repository.** The full pipeline depends on Zillow ZHVI, FHFA HPI, BLS QCEW employment files (~4,400 county CSVs per year for 2017–2019), TIGER/Line shapefiles, BEA county GDP, U.S. Census population estimates, and the county-level tariff tracker. Several of these files exceed GitHub's 100 MB per-file limit, and others (Zillow ZHVI in particular) are subject to provider terms of use that discourage redistribution.
+
+A snapshot of the data files used for this analysis is available here:
+**[Google Drive: project data folder](https://drive.google.com/drive/folders/1ltM4-ydKQp4_azd9n5SZa8yOMZPZBQps?usp=share_link)**
+
+Download the contents of that folder into a local `Data/` directory at the repo root, then the notebooks in `src/` will run end-to-end. The original sources for each dataset are listed below if you'd rather pull fresh copies.
 
 ---
 
@@ -45,7 +50,7 @@ I find a statistically significant positive relationship between tariff exposure
 | County GDP                          | U.S. Bureau of Economic Analysis                                                        |
 | County boundaries (TIGER/Line 2019) | U.S. Census Bureau                                                                      |
 
-None of these datasets are stored in the repository. After downloading, place files in a local `Data/` directory matching the names referenced in the notebooks (e.g. `Data/Zillow ZIP.csv`, `Data/hpi master.csv`, `Data/ustariffs-by-county.csv`, `Data/countypres_2000-2020.csv`). The QCEW per-county CSVs go into per-year folders (`2017.q1-q4.by_area/`, etc.) and are condensed by `src/Employment_condenser.ipynb` into `Data/employment_data_2017_2019_combined.csv`.
+None of these datasets are stored in the repository. The easiest way to get the exact files used in this analysis is the [Google Drive snapshot](https://drive.google.com/drive/folders/1ltM4-ydKQp4_azd9n5SZa8yOMZPZBQps?usp=share_link); alternatively, download fresh copies from the sources above and place them in a local `Data/` directory matching the filenames the notebooks expect (`Data/Zillow ZIP.csv`, `Data/hpi master.csv`, `Data/ustariffs-by-county.csv`, `Data/countypres_2000-2020.csv`, etc.). The QCEW per-county CSVs go into per-year folders (`2017.q1-q4.by_area/`, etc.) and are condensed by `src/Employment_condenser.ipynb` into `Data/employment_data_2017_2019_combined.csv`.
 
 ---
 
